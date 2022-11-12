@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Box, createTheme, CssBaseline, ThemeProvider} from "@mui/material";
+import FindRepository from "./pages/FindRepository";
+
+const theme = createTheme({
+	palette: {
+    primary: {
+      main: '#0052cc',
+    },
+    secondary: {
+      main: '#edf2ff',
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+		<ThemeProvider theme={theme}>
+			<CssBaseline />
+			<Box sx={{ margin: 5 }}>
+				<FindRepository />
+			</Box>
+		</ThemeProvider>
+	);
 }
 
 export default App;

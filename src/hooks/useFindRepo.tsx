@@ -7,6 +7,7 @@ interface Repo {
 			totalCount: number;
 		};
 		name: string;
+		url: string;
 		updatedAt: string;
 		owner: {
 			avatarUrl: string;
@@ -55,6 +56,7 @@ const GET_SEARCHED_REPOS = gql`
 							totalCount
 						}
 						name
+						url
 						updatedAt
 						owner {
 							avatarUrl
